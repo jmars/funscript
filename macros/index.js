@@ -72,9 +72,16 @@ let fn = macro {
 	}
 }
 
+let ~ = macro {
+	rule { $key:ident } => {
+		$key:$key
+	}
+}
+
 export |;
 export fn;
 export ||;
 export @;
 export var;
 export import;
+export ~;
