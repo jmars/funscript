@@ -8,12 +8,6 @@ let import = macro {
 	}
 }
 
-let export = macro {
-	rule { $val } => {
-		module.exports = $val;
-	}
-}
-
 let var = macro {
 	rule { {$name:ident (,) ...} = $value } => {
 		var object = $value
@@ -77,3 +71,10 @@ let fn = macro {
 		function *($arg (,) ...) {$body ...}
 	}
 }
+
+export |;
+export fn;
+export ||;
+export @;
+export var;
+export import;
